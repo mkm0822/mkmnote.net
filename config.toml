@@ -1,6 +1,6 @@
 baseURL = "https://mkm0822.github.io/mkm0822.net/"
-title = "mkm0822"
-description = "mkm0822"
+title = "mkm docs"
+description = "mkm docs"
 
 enableRobotsTXT = true
 
@@ -77,7 +77,7 @@ hasCJKLanguage = true
 # Everything below this are Site Params
 
 [params]
-  copyright = "mkm0822"
+  copyright = "mkm"
   #privacy_policy = "https://policies.google.com/privacy"
 
   time_format_default = "2006-01-02"
