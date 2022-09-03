@@ -18,6 +18,8 @@ enableMissingTranslationPlaceholders = false
 
 #disableKinds = ["taxonomy", "taxonomyTerm"]
 
+publishDir = "docs"
+
 [taxonomies]
 tag = "tags"
 category = "categories"
