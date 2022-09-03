@@ -1,0 +1,156 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Karkn Dev – Chromebook</title>
+    <link>https://dev.karkn.net/docs/chromebook/</link>
+    <description>Recent content in Chromebook on Karkn Dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    
+	  <atom:link href="https://dev.karkn.net/docs/chromebook/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: ChromebookでEmacsを使う</title>
+      <link>https://dev.karkn.net/docs/2020/09/use-emacs-on-linux/</link>
+      <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dev.karkn.net/docs/2020/09/use-emacs-on-linux/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;環境&#34;&gt;環境&lt;/h2&gt;
+&lt;p&gt;このページの内容は Lenovo IdeaPad Duet Chromebook で動作を確認しています。&lt;/p&gt;
+&lt;h2 id=&#34;emacsのインストール&#34;&gt;Emacsのインストール&lt;/h2&gt;
+&lt;p&gt;以下のコマンドを実行してEmacsをインストールします。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt-get update
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt-get install emacs
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;mozcなどのインストール&#34;&gt;mozcなどのインストール&lt;/h2&gt;
+&lt;p&gt;以下のコマンドを実行します。
+mozcは日本語入力用IMEです。
+emacs-mozcやemacs-mozc-binはmozcをEmacsで使用するためのパッケージです。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt-get install mozc emacs-mozc emacs-mozc-bin
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;emacsの設定&#34;&gt;Emacsの設定&lt;/h2&gt;
+&lt;h3 id=&#34;packageのインストール&#34;&gt;Packageのインストール&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;~/.emacs.d/init.el&lt;/code&gt; に以下の設定を記述します。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-emacs&#34; data-lang=&#34;emacs&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;;;; package&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87&#34;&gt;require&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;package&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;add-to-list&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;package-archives&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;melpa&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;https://melpa.org/packages/&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;add-to-list&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;package-archives&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;marmalade&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;https://marmalade-repo.org/packages/&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;package-initialize&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;デフォルトフォントの設定&#34;&gt;デフォルトフォントの設定&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;~/.emacs.d/init.el&lt;/code&gt; に以下の設定を記述します。
+フォントのサイズは &lt;code&gt;-10&lt;/code&gt; の数字で指定できます。
+インストールされているフォントは &lt;code&gt;fc-list&lt;/code&gt; コマンドで調べられます。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-emacs&#34; data-lang=&#34;emacs&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;;;; frame&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87&#34;&gt;setq&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;default-frame-alist&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;((&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;font&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Noto Sans Mono CJK JP-10&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;mozcの設定&#34;&gt;mozcの設定&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;~/.emacs.d/init.el&lt;/code&gt; に以下の設定を記述します。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-emacs&#34; data-lang=&#34;emacs&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;;;; mozc&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87&#34;&gt;require&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;mozc&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;set-language-environment&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Japanese&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87&#34;&gt;setq&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;default-input-method&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;japanese-mozc&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;prefer-coding-system&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;utf-8&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;;; かなキー，英数キーでIMEのON/OFFを設定できるようにする&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;global-set-key&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;henkan&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87&#34;&gt;lambda&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                  &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87&#34;&gt;interactive&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                  &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87&#34;&gt;when&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;null&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;current-input-method&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;toggle-input-method&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;))))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;global-set-key&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;muhenkan&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87&#34;&gt;lambda&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                  &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87&#34;&gt;interactive&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                  &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;inactivate-input-method&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87&#34;&gt;defadvice&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;mozc-handle-event&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;around&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;intercept-keys&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;event&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;member&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;event&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;list&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;zenkaku-hankaku&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;muhenkan&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87&#34;&gt;progn&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	  &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;mozc-clean-up-session&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	  &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;toggle-input-method&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87&#34;&gt;progn&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#000&#34;&gt;ad-do-it&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;ad-activate&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;mozc-handle-event&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;;; IME ON/OFF時にカーソル色を変更&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;add-hook&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;input-method-activate-hook&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87&#34;&gt;lambda&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;set-cursor-color&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;orange&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;add-hook&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;input-method-inactivate-hook&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87&#34;&gt;lambda&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;set-cursor-color&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;black&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;mozcの変換候補表示の設定&#34;&gt;mozcの変換候補表示の設定&lt;/h3&gt;
+&lt;p&gt;emacs-mozcのデフォルトの設定では変換候補表示時の入力ラグが大きいので，mozc-popupを使うように設定します。&lt;/p&gt;
+&lt;h4 id=&#34;mozc-popupのインストール&#34;&gt;mozc-popupのインストール&lt;/h4&gt;
+&lt;p&gt;まずEmacsで &lt;code&gt;M-x&lt;/code&gt; を押して &lt;code&gt;package-install&lt;/code&gt; と入力します。&lt;code&gt;Install package:&lt;/code&gt; と表示されるので &lt;code&gt;mozc-popup&lt;/code&gt; と入力します。&lt;/p&gt;
+&lt;h4 id=&#34;mozc-popupの設定&#34;&gt;mozc-popupの設定&lt;/h4&gt;
+&lt;p&gt;次に &lt;code&gt;~/.emacs.d/init.el&lt;/code&gt; に以下の設定を記述します。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-emacs&#34; data-lang=&#34;emacs&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;;; 変換候補の表示にpopupを使用する&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87&#34;&gt;require&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;mozc-popup&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87&#34;&gt;setq&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;mozc-candidate-style&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;popup&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;シェルフに登録&#34;&gt;シェルフに登録&lt;/h2&gt;
+&lt;p&gt;シェルフにEmacsを登録します。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;emacs &amp;amp;&lt;/code&gt; コマンドを実行してEmacsを起動し，シェルフに固定します。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;fix_shelf.png&#34; alt=&#34;シェルフに固定&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;全画面表示させるための設定&#34;&gt;全画面表示させるための設定&lt;/h3&gt;
+&lt;p&gt;2020/09/01現在，chromebookのlinuxのEmacsは起動時にウィンドウ位置を指定できないようです。
+&lt;code&gt;default-frame-alist&lt;/code&gt; に &lt;code&gt;top&lt;/code&gt; や &lt;code&gt;left&lt;/code&gt; を指定しても，
+&lt;code&gt;emacs&lt;/code&gt; コマンドの起動オプション &lt;code&gt;-g&lt;/code&gt; を指定しても，表示位置には反映されません。
+起動時のウィンドウサイズに応じて画面中央に表示されるように，勝手に位置調整されてしまいます。&lt;/p&gt;
+&lt;p&gt;このままでは使いにくいので，ここでは全画面にEmacsが表示されるように設定します。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;.local/share/applications/emacs.desktop&lt;/code&gt; というファイルを作成して以下の内容を記述します。
+解像度によっては全画面より小さく表示されるので，その場合は &lt;code&gt;Exec=/usr/bin/emacs -g 200x50&lt;/code&gt; の &lt;code&gt;200x50&lt;/code&gt; の数字を大きくしてください。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[Desktop Entry]
+Name=Emacs
+GenericName=Emacs
+Exec=/usr/bin/emacs -g 200x50
+Icon=emacs24
+Type=Application
+Terminal=false
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;emacs.desktop&lt;/code&gt; ファイルを保存したら，以下のコマンドを実行します。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;update-desktop-database
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Emacsを終了してシェルフのボタンから起動し直すとEmacsが全画面サイズで表示されます。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;max_window.png&#34; alt=&#34;全画面サイズ表示&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;mozcの設定-1&#34;&gt;mozcの設定&lt;/h2&gt;
+&lt;p&gt;日本語入力システムであるmozcそのものの設定をします。&lt;/p&gt;
+&lt;p&gt;以下のコマンドを実行してmozcツールをインストールします。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt-get install mozc-utils-gui
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;以下のコマンドで設定ツールを起動します。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;/usr/lib/mozc/mozc_tool --mode&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;config_dialog &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;amp;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;mozc_tool.png&#34; alt=&#34;mozc設定ツール&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;mozcでemacsキーバインドを使えるように設定&#34;&gt;mozcでEmacsキーバインドを使えるように設定&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/proshunsuke/mozc-emacs&#34;&gt;https://github.com/proshunsuke/mozc-emacs&lt;/a&gt; の &lt;code&gt;keymap-emacs.txt&lt;/code&gt; をダウンロードします。&lt;/p&gt;
+&lt;p&gt;以下のコマンドで設定ツールを起動します。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;/usr/lib/mozc/mozc_tool --mode&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;config_dialog &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;amp;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;Keymap style&lt;/code&gt; を &lt;code&gt;Custom keymap&lt;/code&gt; にして，&lt;code&gt;Customize...&lt;/code&gt; ボタンを押下します。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;mozc_tool.png&#34; alt=&#34;mozc設定ツール&#34;&gt;&lt;/p&gt;
+&lt;p&gt;表示されたダイアログの左下にある &lt;code&gt;Edit&lt;/code&gt; &amp;gt; &lt;code&gt;Import from file...&lt;/code&gt; でダウンロードした &lt;code&gt;keymap-emacs.txt&lt;/code&gt; を選択します。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;mozc_import.png&#34; alt=&#34;mozc設定のインポート&#34;&gt;&lt;/p&gt;
+&lt;p&gt;以上&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: ChromebookでHugoを使う</title>
+      <link>https://dev.karkn.net/docs/2020/09/use-hugo-on-linux/</link>
+      <pubDate>Tue, 01 Sep 2020 00:00:21 +0900</pubDate>
+      
+      <guid>https://dev.karkn.net/docs/2020/09/use-hugo-on-linux/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;前提&#34;&gt;前提&lt;/h2&gt;
+&lt;p&gt;Hugoの一般的な設定方法や使い方については &lt;a href=&#34;https://dev.karkn.net/docs/hugo/&#34;&gt;Hugo&lt;/a&gt; を参照してください。&lt;/p&gt;
+&lt;h2 id=&#34;ローカル起動とchromeでの表示&#34;&gt;ローカル起動とChromeでの表示&lt;/h2&gt;
+&lt;p&gt;ChromebookのLinuxの仕組みのため，&lt;code&gt;hugo server&lt;/code&gt;で起動しても，
+Chromeから http://localhost:1313 でうまくアクセスできません。&lt;/p&gt;
+&lt;p&gt;Hugoをローカル起動するには以下のコマンドを実行します。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;hugo server --bind=&amp;#34;0.0.0.0&amp;#34; --baseURL=&amp;#34;http://penguin.linux.test&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Chromeで表示するには &lt;code&gt;http://penguin.linux.test&lt;/code&gt; にアクセスします。&lt;/p&gt;
+&lt;p&gt;以上&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

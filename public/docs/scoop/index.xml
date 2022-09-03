@@ -1,0 +1,120 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Karkn Dev – Scoop</title>
+    <link>https://dev.karkn.net/docs/scoop/</link>
+    <description>Recent content in Scoop on Karkn Dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    
+	  <atom:link href="https://dev.karkn.net/docs/scoop/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Scoopの使い方</title>
+      <link>https://dev.karkn.net/docs/2020/08/use-scoop/</link>
+      <pubDate>Sun, 23 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dev.karkn.net/docs/2020/08/use-scoop/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;scoopとは&#34;&gt;Scoopとは&lt;/h2&gt;
+&lt;p&gt;Scoopはコマンドラインで実行できるアプリケーション管理ツールです。
+Scoopを使うとアプリケーションのインストール・アンインストール・アップデートがコマンドひとつで簡単に実行できます。
+うっとうしいUACポップアップやインストールウィザードが表示されることがなくなります。&lt;/p&gt;
+&lt;h2 id=&#34;scoopのインストール&#34;&gt;Scoopのインストール&lt;/h2&gt;
+&lt;p&gt;PowerShellを起動して，以下のコマンドを実行します。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Set-ExecutionPolicy RemoteSigned -scope CurrentUser -force
+Invoke-Expression (New-Object System.Net.WebClient).DownloadString(&amp;#39;https://get.scoop.sh&amp;#39;)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;以上でインストールは終わりです。&lt;/p&gt;
+&lt;h2 id=&#34;アプリケーションのインストールとアンインストール&#34;&gt;アプリケーションのインストールとアンインストール&lt;/h2&gt;
+&lt;p&gt;Scoopを使ってアプリケーションをインストールするには &lt;code&gt;install&lt;/code&gt; コマンドを使います。
+例えばgitをインストールするには以下のコマンドをコマンドプロンプトで実行します。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;scoop install git
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;逆にアンインストールする場合は &lt;code&gt;uninstall&lt;/code&gt; コマンドを使います。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;scoop uninstall git
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;bucketの追加&#34;&gt;bucketの追加&lt;/h2&gt;
+&lt;p&gt;Scoopで管理するアプリケーション群はbucketというまとまりごとに分けられています。
+bucketの一覧は &lt;a href=&#34;https://github.com/lukesampson/scoop#known-application-buckets&#34;&gt;Known application buckets&lt;/a&gt; にあります。&lt;/p&gt;
+&lt;p&gt;インストール直後は &lt;code&gt;main&lt;/code&gt; bucketだけが管理対象となっています。
+使いたいアプリケーションが &lt;code&gt;main&lt;/code&gt; 以外のbucketに入っている場合は，そのbucketを管理対象に追加しないといけません。
+例えば &lt;code&gt;extras&lt;/code&gt; bucketを追加したい場合は以下のコマンドを実行します。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;scoop bucket add extras
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;これで &lt;code&gt;extras&lt;/code&gt; bucketに含まれるアプリケーションも簡単にインストールできるようになります。
+例えば &lt;code&gt;extras&lt;/code&gt; bucketに含まれる &lt;code&gt;everything&lt;/code&gt; や &lt;code&gt;heidisql&lt;/code&gt; をインストールするには以下のコマンドを実行します。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;scoop install everything heidisql
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;とりあえず &lt;code&gt;extras&lt;/code&gt; bucketは追加しておいたほうが良いと思います。
+Javaで開発をしている場合は &lt;code&gt;java&lt;/code&gt; bucketを追加しておくと，各種JDKが簡単にインストールできます。&lt;/p&gt;
+&lt;h2 id=&#34;scoopのアップデート&#34;&gt;Scoopのアップデート&lt;/h2&gt;
+&lt;p&gt;Scoopをアップデートするには以下のコマンドを実行します。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;scoop update
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;アプリケーションをアップデート&#34;&gt;アプリケーションをアップデート&lt;/h2&gt;
+&lt;p&gt;Scoopでインストールしたアプリケーションをアップデートするには以下のコマンドを実行します。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;scoop update *
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://scoop.sh/&#34;&gt;Scoop公式&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Scoopでインストールできるおすすめアプリ</title>
+      <link>https://dev.karkn.net/docs/2020/08/recommended-apps-by-scoop/</link>
+      <pubDate>Sat, 29 Aug 2020 14:08:57 +0900</pubDate>
+      
+      <guid>https://dev.karkn.net/docs/2020/08/recommended-apps-by-scoop/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;cmder&#34;&gt;Cmder&lt;/h2&gt;
+&lt;p&gt;CmderはWindows用コンソールエミュレータです。
+コンソールを複数のタブで開いたり，分割表示できます。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;cmder.png&#34; alt=&#34;Cmder&#34;&gt;&lt;/p&gt;
+&lt;p&gt;インストールするには以下のコマンドを実行します。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;scoop install cmder
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;git-for-windows&#34;&gt;Git for Windows&lt;/h2&gt;
+&lt;p&gt;Git for WindowsはWindows用Gitアプリケーションです。
+コマンドラインで実行できる &lt;code&gt;git&lt;/code&gt; コマンドや，
+&lt;code&gt;bash&lt;/code&gt;，&lt;code&gt;sed&lt;/code&gt;，&lt;code&gt;curl&lt;/code&gt;といった便利なコマンドラインアプリケーションがたくさん含まれています。&lt;/p&gt;
+&lt;p&gt;インストールするには以下のコマンドを実行します。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;scoop install git
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;k9s&#34;&gt;k9s&lt;/h2&gt;
+&lt;p&gt;CUIベースのk8sクラスタ管理ツールです。
+k8sを使っている人におすすめです。
+PODの一覧を表示や，PODに対するDescribe表示，ログ表示，Shellの実行が簡単にできます。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/derailed/k9s/master/assets/screen_po.png&#34; alt=&#34;k9s&#34;&gt;&lt;/p&gt;
+&lt;p&gt;インストールするには以下のコマンドを実行します。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;scoop install k9s
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;hugo-extended&#34;&gt;hugo-extended&lt;/h2&gt;
+&lt;p&gt;Hugoは静的サイトジェネレータです。
+&lt;a href=&#34;https://dev.karkn.net/docs/hugo/&#34;&gt;Hugo&lt;/a&gt; にも説明がありますのでご参照ください。&lt;/p&gt;
+&lt;p&gt;インストールするには以下のコマンドを実行します。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;scoop install hugo-extended
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;heidisql&#34;&gt;HeidiSQL&lt;/h2&gt;
+&lt;p&gt;HeidiSQLはデータベース管理ツールです。
+RDBMSを使っている人におすすめです。&lt;/p&gt;
+&lt;p&gt;MySQL Workbench 8をインストールしてしまうと，MySQL 5.7サーバに接続できなくなってしまったのでHeidiSQLを利用しています。
+HeidiSQLはMySQL 5.7でも8でも問題なく接続できます。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.heidisql.com/images/screenshots/database.png&#34; alt=&#34;HeidiSQL&#34;&gt;&lt;/p&gt;
+&lt;p&gt;インストールするには以下のコマンドを実行します。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;scoop bucket add extras # 以前に実行済みであれば不要
+scoop install heidisql
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;adoptopenjdk-14-with-oracle-hotspot-jvm&#34;&gt;AdoptOpenJDK 14 with Oracle HotSpot JVM&lt;/h2&gt;
+&lt;p&gt;AdoptOpenJDKは無償利用できるJDKです。
+Javaで開発をしている人におすすめです。&lt;/p&gt;
+&lt;p&gt;インストールするには以下のコマンドを実行します。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;scoop bucket add java # 以前に実行済みであれば不要
+scoop install adopt14-hotspot
+&lt;/code&gt;&lt;/pre&gt;
+      </description>
+    </item>
+    
+  </channel>
+</rss>

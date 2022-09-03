@@ -1,0 +1,121 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Karkn Dev – Bash</title>
+    <link>https://dev.karkn.net/docs/bash/</link>
+    <description>Recent content in Bash on Karkn Dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    
+	  <atom:link href="https://dev.karkn.net/docs/bash/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Bash Tips</title>
+      <link>https://dev.karkn.net/docs/2020/09/bash-tips/</link>
+      <pubDate>Thu, 03 Sep 2020 00:00:00 +0900</pubDate>
+      
+      <guid>https://dev.karkn.net/docs/2020/09/bash-tips/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;複数bashプロセス間でhistoryを共有&#34;&gt;複数bashプロセス間でhistoryを共有&lt;/h2&gt;
+&lt;p&gt;複数のbashプロセス間でhistoryを共有するには &lt;code&gt;.bashrc&lt;/code&gt; に以下の設定を記述します。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;PROMPT_COMMAND=&amp;#34;history -a; history -c; history -r; $PROMPT_COMMAND&amp;#34;
+shopt -u histappend
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;一行目で，コマンド履歴をファイルに追記，メモリ上のコマンド履歴を消去，コマンド履歴をファイルから読み込み，という処理をコマンドを実行するたびに実行するように設定しています。&lt;/p&gt;
+&lt;p&gt;二行目ではbashを修了したときにコマンド履歴をhistoryファイルに書き込まないように指定しています。&lt;/p&gt;
+&lt;h2 id=&#34;サブディレクトリのファイル内の文字列を一括置換&#34;&gt;サブディレクトリのファイル内の文字列を一括置換&lt;/h2&gt;
+&lt;p&gt;サブディレクトリのファイル内の文字列をを一括置換するコマンドの例です。&lt;/p&gt;
+&lt;p&gt;名前が &lt;code&gt;kustomization&lt;/code&gt; で始まるファイルのうち，
+パスに &lt;code&gt;base/&lt;/code&gt; を含むファイル内の &lt;code&gt;deployment&lt;/code&gt; という文字列を &lt;code&gt;resources&lt;/code&gt; に置換するには以下のコマンドを実行します。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;find . -name &amp;#34;kustomization*&amp;#34; | grep base/ | xargs sed -i -e &amp;#39;s/deployment/resources/g&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;拡張子が &lt;code&gt;.yml&lt;/code&gt; なファイルのうち，ファイル内に &lt;code&gt;yaml&lt;/code&gt; という文字列を含むファイルの，
+&lt;code&gt;yaml&lt;/code&gt; という文字列を &lt;code&gt;yml&lt;/code&gt; に置換するには以下のコマンドを実行します。。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;find . -type f -name &amp;#34;*.yml&amp;#34; -print | xargs grep -l yaml | xargs sed -i &amp;#34;s/yaml/yml/g&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;標準出力と標準エラーの両方を捨てる&#34;&gt;標準出力と標準エラーの両方を捨てる&lt;/h2&gt;
+&lt;p&gt;コマンドの実行したときの標準出力と標準エラーを両方捨てるには以下のようにリダイレクトします。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;cmd &amp;gt; /dev/null 2&amp;gt;&amp;amp;1
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;文字列を含むか判定&#34;&gt;文字列を含むか判定&lt;/h2&gt;
+&lt;p&gt;ある文字列にある文字列が含まれるかを判定するには以下のように &lt;code&gt;if&lt;/code&gt; を記述します。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000&#34;&gt;STR&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;GNU/Linux is an operating system&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000&#34;&gt;SUB&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;Linux&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[[&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;$STR&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;==&lt;/span&gt; *&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;$SUB&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;&lt;/span&gt;* &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]]&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;then&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;It&amp;#39;s there.&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;fi&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;osの判定&#34;&gt;OSの判定&lt;/h2&gt;
+&lt;p&gt;OSを判定するには &lt;code&gt;uname&lt;/code&gt; コマンドを使います。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[[&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;$(&lt;/span&gt;uname&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;==&lt;/span&gt; *&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;Linux&amp;#39;&lt;/span&gt;* &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]]&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;then&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;linux&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;elif&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[[&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;$(&lt;/span&gt;uname&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;==&lt;/span&gt; *&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;Darwin* ]]; then
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;    echo &amp;#34;mac&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;elif [[ &amp;#34;$(uname)&amp;#34; == *&amp;#39;&lt;/span&gt;MINGW64&lt;span style=&#34;color:#a40000&#34;&gt;&amp;#39;&lt;/span&gt;* &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]]&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;then&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;win&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;fi&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;変数の空文字判定&#34;&gt;変数の空文字判定&lt;/h2&gt;
+&lt;p&gt;変数が空文字かを判定するには以下のように &lt;code&gt;if&lt;/code&gt; を記述します。
+変数を&amp;quot;&amp;ldquo;で囲む必要があることに注意。&lt;/p&gt;
+&lt;p&gt;STRING変数が空または空文字でないかどうか。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt; -n &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;$STRING&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;then&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# 空でないときの処理&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;fi&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;STRING変数が空または空文字かどうか。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt; -z &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;$STRING&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;then&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# 空のときの処理&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;fi&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;変数の大文字化小文字化&#34;&gt;変数の大文字化/小文字化&lt;/h2&gt;
+&lt;p&gt;変数の大文字化または小文字化。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;記述&lt;/th&gt;
+&lt;th&gt;説明&lt;/th&gt;
+&lt;th&gt;例&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;${v^}&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;大文字化(１文字目のみ)&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;v=&amp;quot;ho ge&amp;quot;; echo ${v^}&lt;/code&gt;→Ho ge&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;${v^^}&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;大文字化(全文字)&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;v=&amp;quot;ho ge&amp;quot;; echo ${v^^}&lt;/code&gt;→HO GE&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;${v,}&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;小文字化(１文字目のみ)&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;v=&amp;quot;HO GE&amp;quot;; echo ${v,}&lt;/code&gt;→hO GE&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;${v,,}&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;小文字化(全文字)&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;v=&amp;quot;HO GE&amp;quot;; echo ${v,,}&lt;/code&gt;→ho ge&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;${v~}&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;大小反転(１文字目のみ※)&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;v=&amp;quot;ho GE&amp;quot;; echo ${v~}&lt;/code&gt;→Ho gE&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;${v~~}&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;大小反転(全文字)&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;v=&amp;quot;ho GE&amp;quot;; echo ${v~~}&lt;/code&gt;→HO GE&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;コマンド補完時に大文字小文字を区別しない&#34;&gt;コマンド補完時に大文字小文字を区別しない&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;.inputrc&lt;/code&gt; に以下を追加します。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;set completion-ignore-case on
+&lt;/code&gt;&lt;/pre&gt;
+      </description>
+    </item>
+    
+  </channel>
+</rss>
