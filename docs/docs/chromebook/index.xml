@@ -15,9 +15,31 @@
     
     
     <item>
+      <title>Docs: ChromebookでHugoを使う</title>
+      <link>https://mkm0822.github.io/mkm0822.net/docs/2020/09/use-hugo-on-linux/</link>
+      <pubDate>Tue, 01 Sep 2020 00:00:21 +0900</pubDate>
+      
+      <guid>https://mkm0822.github.io/mkm0822.net/docs/2020/09/use-hugo-on-linux/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;前提&#34;&gt;前提&lt;/h2&gt;
+&lt;p&gt;Hugoの一般的な設定方法や使い方については &lt;a href=&#34;https://mkm0822.github.io/mkm0822.net/docs/hugo/&#34;&gt;Hugo&lt;/a&gt; を参照してください。&lt;/p&gt;
+&lt;h2 id=&#34;ローカル起動とchromeでの表示&#34;&gt;ローカル起動とChromeでの表示&lt;/h2&gt;
+&lt;p&gt;ChromebookのLinuxの仕組みのため，&lt;code&gt;hugo server&lt;/code&gt;で起動しても，
+Chromeから http://localhost:1313 でうまくアクセスできません。&lt;/p&gt;
+&lt;p&gt;Hugoをローカル起動するには以下のコマンドを実行します。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;hugo server --bind=&amp;#34;0.0.0.0&amp;#34; --baseURL=&amp;#34;http://penguin.linux.test&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Chromeで表示するには &lt;code&gt;http://penguin.linux.test&lt;/code&gt; にアクセスします。&lt;/p&gt;
+&lt;p&gt;以上&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: ChromebookでEmacsを使う</title>
       <link>https://mkm0822.github.io/mkm0822.net/docs/2020/09/use-emacs-on-linux/</link>
-      <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 01 Sep 2020 00:00:00 +0900</pubDate>
       
       <guid>https://mkm0822.github.io/mkm0822.net/docs/2020/09/use-emacs-on-linux/</guid>
       <description>
@@ -125,28 +147,6 @@ Terminal=false
 &lt;p&gt;&lt;img src=&#34;mozc_tool.png&#34; alt=&#34;mozc設定ツール&#34;&gt;&lt;/p&gt;
 &lt;p&gt;表示されたダイアログの左下にある &lt;code&gt;Edit&lt;/code&gt; &amp;gt; &lt;code&gt;Import from file...&lt;/code&gt; でダウンロードした &lt;code&gt;keymap-emacs.txt&lt;/code&gt; を選択します。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;mozc_import.png&#34; alt=&#34;mozc設定のインポート&#34;&gt;&lt;/p&gt;
-&lt;p&gt;以上&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: ChromebookでHugoを使う</title>
-      <link>https://mkm0822.github.io/mkm0822.net/docs/2020/09/use-hugo-on-linux/</link>
-      <pubDate>Tue, 01 Sep 2020 00:00:21 +0900</pubDate>
-      
-      <guid>https://mkm0822.github.io/mkm0822.net/docs/2020/09/use-hugo-on-linux/</guid>
-      <description>
-        
-        
-        &lt;h2 id=&#34;前提&#34;&gt;前提&lt;/h2&gt;
-&lt;p&gt;Hugoの一般的な設定方法や使い方については &lt;a href=&#34;https://mkm0822.github.io/mkm0822.net/docs/hugo/&#34;&gt;Hugo&lt;/a&gt; を参照してください。&lt;/p&gt;
-&lt;h2 id=&#34;ローカル起動とchromeでの表示&#34;&gt;ローカル起動とChromeでの表示&lt;/h2&gt;
-&lt;p&gt;ChromebookのLinuxの仕組みのため，&lt;code&gt;hugo server&lt;/code&gt;で起動しても，
-Chromeから http://localhost:1313 でうまくアクセスできません。&lt;/p&gt;
-&lt;p&gt;Hugoをローカル起動するには以下のコマンドを実行します。&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;hugo server --bind=&amp;#34;0.0.0.0&amp;#34; --baseURL=&amp;#34;http://penguin.linux.test&amp;#34;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Chromeで表示するには &lt;code&gt;http://penguin.linux.test&lt;/code&gt; にアクセスします。&lt;/p&gt;
 &lt;p&gt;以上&lt;/p&gt;
 
       </description>

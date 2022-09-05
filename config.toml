@@ -4,8 +4,7 @@ description = "mkm docs"
 
 enableRobotsTXT = true
 
-# Hugo allows theme composition (and inheritance). The precedence is from left to right.
-theme = ["docsy"]
+theme = "docsy"
 
 # Will give values to .Lastmod etc.
 enableGitInfo = true
@@ -20,19 +19,21 @@ enableMissingTranslationPlaceholders = false
 
 publishDir = "docs"
 
+timeZone = "Asia/Tokyo"
+
 [taxonomies]
 tag = "tags"
 category = "categories"
 
 [params.taxonomy]
 # set taxonomyCloud = [] to hide taxonomy clouds
-taxonomyCloud = ["tags", "categories"] 
+taxonomyCloud = ["tags", "categories"]
 
 # If used, must have same length as taxonomyCloud
-taxonomyCloudTitle = ["Tags", "Categories"] 
+taxonomyCloudTitle = ["Tags", "Categories"]
 
 # set taxonomyPageHeader = [] to hide taxonomies on the page headers
-taxonomyPageHeader = ["tags", "categories"] 
+taxonomyPageHeader = ["tags", "categories"]
 
 # Configure how URLs look like per section.
 [permalinks]
@@ -45,10 +46,10 @@ resampleFilter = "CatmullRom"
 quality = 75
 anchor = "smart"
 
-[[menu.main]]
-    name = "Home"
-    weight = 100
-    url = "https://mkm0822.github.io/mkm0822.net/"
+#[[menu.main]]
+#    name = "Home"
+#    weight = 100
+#    url = "https://mkm0822.github.io/mkm0822.net/"
 
 [services]
 [services.googleAnalytics]
@@ -59,9 +60,7 @@ id = "UA-175889575-3"
 [languages.ja]
 languageName ="日本語"
 languageCode = "ja"
-# Weight used for sorting.
 weight = 1
-
 hasCJKLanguage = true
 
 [markup]
@@ -81,6 +80,8 @@ hasCJKLanguage = true
   #privacy_policy = "https://policies.google.com/privacy"
 
   time_format_default = "2006-01-02"
+  time_format_blog = "2006-01-02"
+  dateFormat = "2006-01-02"
 
 # First one is picked as the Twitter card image if not set on page.
 # images = ["images/project-illustration.png"]
