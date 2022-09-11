@@ -10,12 +10,12 @@ draft: true
 UUIDを生成してそれをBase64でエンコードするのがお手頃でよい。
 
 ```kotlin
-fun generateShortUuid() {
-    Base64 base64 = new Base64();
-    UUID uuid = UUID.fromString(str);
-    ByteBuffer bb = ByteBuffer.wrap(new byte[16]);
-    bb.putLong(uuid.getMostSignificantBits());
-    bb.putLong(uuid.getLeastSignificantBits());
-    return base64.encodeBase64URLSafeString(bb.array());
-}
+    fun generateShortUuid(): String {
+        val uuid = UUID.randomUUID();
+        val bb = ByteBuffer.wrap(ByteArray(16))
+        bb.putLong(uuid.mostSignificantBits)
+        bb.putLong(uuid.leastSignificantBits)
+        val bytes = Base64.getUrlEncoder().encode(bb.array())
+        return String(bytes);
+    }
 ```
