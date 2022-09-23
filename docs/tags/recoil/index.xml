@@ -1,0 +1,55 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mkm docs – Recoil</title>
+    <link>https://mkm0822.github.io/mkm0822.net/tags/recoil/</link>
+    <description>Recent content in Recoil on mkm docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Sat, 24 Sep 2022 02:15:25 +0900</lastBuildDate>
+    
+	  <atom:link href="https://mkm0822.github.io/mkm0822.net/tags/recoil/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Next.jsの開発モードでRecoilのエラーが表示されないようにする</title>
+      <link>https://mkm0822.github.io/mkm0822.net/docs/2022/09/hide-recoil-error-on-nextjs/</link>
+      <pubDate>Sat, 24 Sep 2022 02:15:25 +0900</pubDate>
+      
+      <guid>https://mkm0822.github.io/mkm0822.net/docs/2022/09/hide-recoil-error-on-nextjs/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
+&lt;p&gt;Next.jsでRecoilを使って &lt;code&gt;npm run dev&lt;/code&gt; すると以下の警告が表示される。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Expectation Violation: Duplicate atom key &amp;#34;xxx&amp;#34;. This is a FATAL ERROR in
+      production. But it is safe to ignore this warning if it occurred because of
+      hot module replacement.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;無視しても問題ないが，他の出力が見えなくなってしまって邪魔になる。&lt;/p&gt;
+&lt;h2 id=&#34;非表示にする方法&#34;&gt;非表示にする方法&lt;/h2&gt;
+&lt;h3 id=&#34;next-intercept-stdoutをインストール&#34;&gt;next-intercept-stdoutをインストール&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.npmjs.com/package/next-intercept-stdout&#34;&gt;next-intercept-stdout&lt;/a&gt; をインストールする。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;cd path/to/your_nextjs_project
+npm i next-intercept-stdout
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;nextconfigjsを編集&#34;&gt;next.config.jsを編集&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;const withInterceptStdout = require(&amp;#39;next-intercept-stdout&amp;#39;);
+
+module.exports = withInterceptStdout(
+  {
+    reactStrictMode: true,
+    // your configs...
+  },
+  (text) =&amp;gt; (text.includes(&amp;#39;Duplicate atom key&amp;#39;) ? &amp;#39;&amp;#39; : text),
+);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;これで &lt;code&gt;npm run dev&lt;/code&gt; してもRecoilの警告は表示されなくなる。&lt;/p&gt;
+&lt;p&gt;以上&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

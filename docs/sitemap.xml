@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://mkm0822.github.io/mkm0822.net/docs/2022/09/hide-recoil-error-on-nextjs/</loc>
+    <lastmod>2022-09-24T02:42:55+09:00</lastmod>
+  </url><url>
     <loc>https://mkm0822.github.io/mkm0822.net/docs/2020/09/bash-tips/</loc>
     <lastmod>2022-09-03T22:40:49+09:00</lastmod>
   </url><url>
@@ -9,24 +12,24 @@
     <lastmod>2022-09-03T22:40:49+09:00</lastmod>
   </url><url>
     <loc>https://mkm0822.github.io/mkm0822.net/docs/2020/08/hugo-with-github/</loc>
-    <lastmod>2022-09-03T22:40:49+09:00</lastmod>
+    <lastmod>2022-09-24T02:42:55+09:00</lastmod>
   </url><url>
     <loc>https://mkm0822.github.io/mkm0822.net/docs/</loc>
     <lastmod>2022-09-03T22:40:49+09:00</lastmod>
   </url><url>
-    <loc>https://mkm0822.github.io/mkm0822.net/docs/hugo/</loc>
-    <lastmod>2022-09-03T22:40:49+09:00</lastmod>
+    <loc>https://mkm0822.github.io/mkm0822.net/tags/next.js/</loc>
+    <lastmod>2022-09-24T02:42:55+09:00</lastmod>
   </url><url>
-    <loc>https://mkm0822.github.io/mkm0822.net/docs/scoop/</loc>
-    <lastmod>2022-09-03T22:40:49+09:00</lastmod>
+    <loc>https://mkm0822.github.io/mkm0822.net/tags/recoil/</loc>
+    <lastmod>2022-09-24T02:42:55+09:00</lastmod>
+  </url><url>
+    <loc>https://mkm0822.github.io/mkm0822.net/tags/</loc>
+    <lastmod>2022-09-24T02:42:55+09:00</lastmod>
   </url><url>
     <loc>https://mkm0822.github.io/mkm0822.net/blog/2022/09/04/%E5%88%9D%E6%8A%95%E7%A8%BF/</loc>
     <lastmod>2022-09-06T02:07:38+09:00</lastmod>
   </url><url>
     <loc>https://mkm0822.github.io/mkm0822.net/tags/bash/</loc>
-    <lastmod>2022-09-03T22:40:49+09:00</lastmod>
-  </url><url>
-    <loc>https://mkm0822.github.io/mkm0822.net/tags/</loc>
     <lastmod>2022-09-03T22:40:49+09:00</lastmod>
   </url><url>
     <loc>https://mkm0822.github.io/mkm0822.net/docs/2020/09/use-hugo-on-linux/</loc>
@@ -52,8 +55,20 @@
     <loc>https://mkm0822.github.io/mkm0822.net/docs/chromebook/</loc>
     <lastmod>2022-09-03T22:40:49+09:00</lastmod>
   </url><url>
+    <loc>https://mkm0822.github.io/mkm0822.net/docs/hugo/</loc>
+    <lastmod>2022-09-24T02:42:55+09:00</lastmod>
+  </url><url>
+    <loc>https://mkm0822.github.io/mkm0822.net/docs/kotlin/</loc>
+    <lastmod>2022-09-24T02:42:55+09:00</lastmod>
+  </url><url>
     <loc>https://mkm0822.github.io/mkm0822.net/</loc>
     <lastmod>2022-09-04T10:09:33+09:00</lastmod>
+  </url><url>
+    <loc>https://mkm0822.github.io/mkm0822.net/docs/nextjs/</loc>
+    <lastmod>2022-09-24T02:42:55+09:00</lastmod>
+  </url><url>
+    <loc>https://mkm0822.github.io/mkm0822.net/docs/scoop/</loc>
+    <lastmod>2022-09-24T02:42:55+09:00</lastmod>
   </url><url>
     <loc>https://mkm0822.github.io/mkm0822.net/search/</loc>
     <lastmod>2022-09-03T22:40:49+09:00</lastmod>
