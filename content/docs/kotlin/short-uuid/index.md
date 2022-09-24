@@ -15,6 +15,7 @@ Kotlinでユニークかつ短いIDを作りたい。UUIDの文字列表現は�
 ## 解決策
 
 UUIDを生成してそれをBase64でエンコードするのがお手軽。
+
 標準的なBase64だと `+` や `/` が使われてしまうので， `Base64.getUrlEncoder()` で取得したEncoderを使用します。
 `Base64.getUrlEncoder()` で取得したEncoderは代わりに `+` や `/` の代わりに `-` と `_` を使うのでファイル名やURLに使用できます。
 

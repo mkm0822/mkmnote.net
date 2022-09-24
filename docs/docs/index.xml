@@ -357,8 +357,8 @@ Javaで開発をしている場合は &lt;code&gt;java&lt;/code&gt; bucketを追
         &lt;h2 id=&#34;問題&#34;&gt;問題&lt;/h2&gt;
 &lt;p&gt;Kotlinでユニークかつ短いIDを作りたい。UUIDの文字列表現は長すぎる。&lt;/p&gt;
 &lt;h2 id=&#34;解決策&#34;&gt;解決策&lt;/h2&gt;
-&lt;p&gt;UUIDを生成してそれをBase64でエンコードするのがお手軽。
-標準的なBase64だと &lt;code&gt;+&lt;/code&gt; や &lt;code&gt;/&lt;/code&gt; が使われてしまうので， &lt;code&gt;Base64.getUrlEncoder()&lt;/code&gt; で取得したEncoderを使用します。
+&lt;p&gt;UUIDを生成してそれをBase64でエンコードするのがお手軽。&lt;/p&gt;
+&lt;p&gt;標準的なBase64だと &lt;code&gt;+&lt;/code&gt; や &lt;code&gt;/&lt;/code&gt; が使われてしまうので， &lt;code&gt;Base64.getUrlEncoder()&lt;/code&gt; で取得したEncoderを使用します。
 &lt;code&gt;Base64.getUrlEncoder()&lt;/code&gt; で取得したEncoderは代わりに &lt;code&gt;+&lt;/code&gt; や &lt;code&gt;/&lt;/code&gt; の代わりに &lt;code&gt;-&lt;/code&gt; と &lt;code&gt;_&lt;/code&gt; を使うのでファイル名やURLに使用できます。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-kotlin&#34; data-lang=&#34;kotlin&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;ShortUuid&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;fun&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;generate&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;():&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;String&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
