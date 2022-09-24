@@ -1,4 +1,4 @@
-baseURL = "https://mkm0822.github.io/mkm0822.net/"
+baseURL = "https://mkmnote.net/"
 title = "mkm docs"
 description = "mkm docs"
 
@@ -49,7 +49,7 @@ anchor = "smart"
 #[[menu.main]]
 #    name = "Home"
 #    weight = 100
-#    url = "https://mkm0822.github.io/mkm0822.net/"
+#    url = "https://mkmnote.net/"
 
 [services]
 [services.googleAnalytics]
@@ -102,7 +102,7 @@ version = "0.0"
 
 # A link to latest version of the docs. Used in the "version-banner" partial to
 # point people to the main doc site.
-url_latest_version = "https://mkm0822.github.io/mkm0822.net/"
+url_latest_version = "https://mkmnote.net/"
 
 # Repository configuration (URLs for in-page links to opening issues and suggesting changes)
 #github_repo = "https://github.com/karkn/karkn.net"
