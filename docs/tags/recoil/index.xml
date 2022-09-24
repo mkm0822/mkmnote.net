@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>mkm docs – Recoil</title>
-    <link>https://mkm0822.github.io/mkm0822.net/tags/recoil/</link>
+    <link>https://mkmnote.net/tags/recoil/</link>
     <description>Recent content in Recoil on mkm docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Sat, 24 Sep 2022 02:15:25 +0900</lastBuildDate>
     
-	  <atom:link href="https://mkm0822.github.io/mkm0822.net/tags/recoil/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://mkmnote.net/tags/recoil/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -17,10 +17,10 @@
     
     <item>
       <title>Docs: Next.jsの開発モードでRecoilのエラーが表示されないようにする</title>
-      <link>https://mkm0822.github.io/mkm0822.net/docs/2022/09/hide-recoil-error-on-nextjs/</link>
+      <link>https://mkmnote.net/docs/2022/09/hide-recoil-error-on-nextjs/</link>
       <pubDate>Sat, 24 Sep 2022 02:15:25 +0900</pubDate>
       
-      <guid>https://mkm0822.github.io/mkm0822.net/docs/2022/09/hide-recoil-error-on-nextjs/</guid>
+      <guid>https://mkmnote.net/docs/2022/09/hide-recoil-error-on-nextjs/</guid>
       <description>
         
         

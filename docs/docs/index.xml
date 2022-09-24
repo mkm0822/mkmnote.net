@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>mkm docs – Docs</title>
-    <link>https://mkm0822.github.io/mkm0822.net/docs/</link>
+    <link>https://mkmnote.net/docs/</link>
     <description>Recent content in Docs on mkm docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     
-	  <atom:link href="https://mkm0822.github.io/mkm0822.net/docs/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://mkmnote.net/docs/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Docs: Bash Tips</title>
-      <link>https://mkm0822.github.io/mkm0822.net/docs/2020/09/bash-tips/</link>
+      <link>https://mkmnote.net/docs/2020/09/bash-tips/</link>
       <pubDate>Thu, 03 Sep 2020 00:00:00 +0900</pubDate>
       
-      <guid>https://mkm0822.github.io/mkm0822.net/docs/2020/09/bash-tips/</guid>
+      <guid>https://mkmnote.net/docs/2020/09/bash-tips/</guid>
       <description>
         
         
@@ -119,10 +119,10 @@ shopt -u histappend
     
     <item>
       <title>Docs: Scoopの使い方</title>
-      <link>https://mkm0822.github.io/mkm0822.net/docs/2020/08/use-scoop/</link>
+      <link>https://mkmnote.net/docs/2020/08/use-scoop/</link>
       <pubDate>Sun, 23 Aug 2020 00:00:00 +0900</pubDate>
       
-      <guid>https://mkm0822.github.io/mkm0822.net/docs/2020/08/use-scoop/</guid>
+      <guid>https://mkmnote.net/docs/2020/08/use-scoop/</guid>
       <description>
         
         
@@ -169,10 +169,10 @@ Javaで開発をしている場合は &lt;code&gt;java&lt;/code&gt; bucketを追
     
     <item>
       <title>Docs: HugoとGitHubでサイト運営</title>
-      <link>https://mkm0822.github.io/mkm0822.net/docs/2020/08/hugo-with-github/</link>
+      <link>https://mkmnote.net/docs/2020/08/hugo-with-github/</link>
       <pubDate>Sat, 22 Aug 2020 00:00:00 +0900</pubDate>
       
-      <guid>https://mkm0822.github.io/mkm0822.net/docs/2020/08/hugo-with-github/</guid>
+      <guid>https://mkmnote.net/docs/2020/08/hugo-with-github/</guid>
       <description>
         
         
@@ -347,10 +347,10 @@ Javaで開発をしている場合は &lt;code&gt;java&lt;/code&gt; bucketを追
     
     <item>
       <title>Docs: KotlinでShort UUIDを生成</title>
-      <link>https://mkm0822.github.io/mkm0822.net/docs/2022/09/kotlin-short-uuid/</link>
+      <link>https://mkmnote.net/docs/2022/09/kotlin-short-uuid/</link>
       <pubDate>Sun, 25 Sep 2022 00:42:58 +0900</pubDate>
       
-      <guid>https://mkm0822.github.io/mkm0822.net/docs/2022/09/kotlin-short-uuid/</guid>
+      <guid>https://mkmnote.net/docs/2022/09/kotlin-short-uuid/</guid>
       <description>
         
         
@@ -383,10 +383,10 @@ Javaで開発をしている場合は &lt;code&gt;java&lt;/code&gt; bucketを追
     
     <item>
       <title>Docs: Next.jsの開発モードでRecoilのエラーが表示されないようにする</title>
-      <link>https://mkm0822.github.io/mkm0822.net/docs/2022/09/hide-recoil-error-on-nextjs/</link>
+      <link>https://mkmnote.net/docs/2022/09/hide-recoil-error-on-nextjs/</link>
       <pubDate>Sat, 24 Sep 2022 02:15:25 +0900</pubDate>
       
-      <guid>https://mkm0822.github.io/mkm0822.net/docs/2022/09/hide-recoil-error-on-nextjs/</guid>
+      <guid>https://mkmnote.net/docs/2022/09/hide-recoil-error-on-nextjs/</guid>
       <description>
         
         
@@ -419,15 +419,15 @@ module.exports = withInterceptStdout(
     
     <item>
       <title>Docs: ChromebookでHugoを使う</title>
-      <link>https://mkm0822.github.io/mkm0822.net/docs/2020/09/use-hugo-on-linux/</link>
+      <link>https://mkmnote.net/docs/2020/09/use-hugo-on-linux/</link>
       <pubDate>Tue, 01 Sep 2020 00:00:21 +0900</pubDate>
       
-      <guid>https://mkm0822.github.io/mkm0822.net/docs/2020/09/use-hugo-on-linux/</guid>
+      <guid>https://mkmnote.net/docs/2020/09/use-hugo-on-linux/</guid>
       <description>
         
         
         &lt;h2 id=&#34;前提&#34;&gt;前提&lt;/h2&gt;
-&lt;p&gt;Hugoの一般的な設定方法や使い方については &lt;a href=&#34;https://mkm0822.github.io/mkm0822.net/docs/hugo/&#34;&gt;Hugo&lt;/a&gt; を参照してください。&lt;/p&gt;
+&lt;p&gt;Hugoの一般的な設定方法や使い方については &lt;a href=&#34;https://mkmnote.net/docs/hugo/&#34;&gt;Hugo&lt;/a&gt; を参照してください。&lt;/p&gt;
 &lt;h2 id=&#34;ローカル起動とchromeでの表示&#34;&gt;ローカル起動とChromeでの表示&lt;/h2&gt;
 &lt;p&gt;ChromebookのLinuxの仕組みのため，&lt;code&gt;hugo server&lt;/code&gt;で起動しても，
 Chromeから http://localhost:1313 でうまくアクセスできません。&lt;/p&gt;
@@ -441,10 +441,10 @@ Chromeから http://localhost:1313 でうまくアクセスできません。&lt
     
     <item>
       <title>Docs: ChromebookでEmacsを使う</title>
-      <link>https://mkm0822.github.io/mkm0822.net/docs/2020/09/use-emacs-on-linux/</link>
+      <link>https://mkmnote.net/docs/2020/09/use-emacs-on-linux/</link>
       <pubDate>Tue, 01 Sep 2020 00:00:00 +0900</pubDate>
       
-      <guid>https://mkm0822.github.io/mkm0822.net/docs/2020/09/use-emacs-on-linux/</guid>
+      <guid>https://mkmnote.net/docs/2020/09/use-emacs-on-linux/</guid>
       <description>
         
         
@@ -557,10 +557,10 @@ Terminal=false
     
     <item>
       <title>Docs: Scoopでインストールできるおすすめアプリ</title>
-      <link>https://mkm0822.github.io/mkm0822.net/docs/2020/08/recommended-apps-by-scoop/</link>
+      <link>https://mkmnote.net/docs/2020/08/recommended-apps-by-scoop/</link>
       <pubDate>Sat, 29 Aug 2020 14:08:57 +0900</pubDate>
       
-      <guid>https://mkm0822.github.io/mkm0822.net/docs/2020/08/recommended-apps-by-scoop/</guid>
+      <guid>https://mkmnote.net/docs/2020/08/recommended-apps-by-scoop/</guid>
       <description>
         
         
@@ -585,7 +585,7 @@ PODの一覧を表示や，PODに対するDescribe表示，ログ表示，Shell�
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;scoop install k9s
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;hugo-extended&#34;&gt;hugo-extended&lt;/h2&gt;
 &lt;p&gt;Hugoは静的サイトジェネレータです。
-&lt;a href=&#34;https://mkm0822.github.io/mkm0822.net/docs/hugo/&#34;&gt;Hugo&lt;/a&gt; にも説明がありますのでご参照ください。&lt;/p&gt;
+&lt;a href=&#34;https://mkmnote.net/docs/hugo/&#34;&gt;Hugo&lt;/a&gt; にも説明がありますのでご参照ください。&lt;/p&gt;
 &lt;p&gt;インストールするには以下のコマンドを実行します。&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;scoop install hugo-extended
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;heidisql&#34;&gt;HeidiSQL&lt;/h2&gt;
@@ -609,10 +609,10 @@ scoop install adopt14-hotspot
     
     <item>
       <title>Docs: Docsyで最終更新の表示を変更</title>
-      <link>https://mkm0822.github.io/mkm0822.net/docs/2020/08/change-docsy-lastmod-format/</link>
+      <link>https://mkmnote.net/docs/2020/08/change-docsy-lastmod-format/</link>
       <pubDate>Sat, 22 Aug 2020 00:00:00 +0900</pubDate>
       
-      <guid>https://mkm0822.github.io/mkm0822.net/docs/2020/08/change-docsy-lastmod-format/</guid>
+      <guid>https://mkmnote.net/docs/2020/08/change-docsy-lastmod-format/</guid>
       <description>
         
         

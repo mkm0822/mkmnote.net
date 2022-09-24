@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>mkm docs – bash</title>
-    <link>https://mkm0822.github.io/mkm0822.net/tags/bash/</link>
+    <link>https://mkmnote.net/tags/bash/</link>
     <description>Recent content in bash on mkm docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Thu, 03 Sep 2020 00:00:00 +0900</lastBuildDate>
     
-	  <atom:link href="https://mkm0822.github.io/mkm0822.net/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://mkmnote.net/tags/bash/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -17,10 +17,10 @@
     
     <item>
       <title>Docs: Bash Tips</title>
-      <link>https://mkm0822.github.io/mkm0822.net/docs/2020/09/bash-tips/</link>
+      <link>https://mkmnote.net/docs/2020/09/bash-tips/</link>
       <pubDate>Thu, 03 Sep 2020 00:00:00 +0900</pubDate>
       
-      <guid>https://mkm0822.github.io/mkm0822.net/docs/2020/09/bash-tips/</guid>
+      <guid>https://mkmnote.net/docs/2020/09/bash-tips/</guid>
       <description>
         
         

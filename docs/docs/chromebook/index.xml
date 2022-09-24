@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>mkm docs – Chromebook</title>
-    <link>https://mkm0822.github.io/mkm0822.net/docs/chromebook/</link>
+    <link>https://mkmnote.net/docs/chromebook/</link>
     <description>Recent content in Chromebook on mkm docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     
-	  <atom:link href="https://mkm0822.github.io/mkm0822.net/docs/chromebook/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://mkmnote.net/docs/chromebook/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,15 +16,15 @@
     
     <item>
       <title>Docs: ChromebookでHugoを使う</title>
-      <link>https://mkm0822.github.io/mkm0822.net/docs/2020/09/use-hugo-on-linux/</link>
+      <link>https://mkmnote.net/docs/2020/09/use-hugo-on-linux/</link>
       <pubDate>Tue, 01 Sep 2020 00:00:21 +0900</pubDate>
       
-      <guid>https://mkm0822.github.io/mkm0822.net/docs/2020/09/use-hugo-on-linux/</guid>
+      <guid>https://mkmnote.net/docs/2020/09/use-hugo-on-linux/</guid>
       <description>
         
         
         &lt;h2 id=&#34;前提&#34;&gt;前提&lt;/h2&gt;
-&lt;p&gt;Hugoの一般的な設定方法や使い方については &lt;a href=&#34;https://mkm0822.github.io/mkm0822.net/docs/hugo/&#34;&gt;Hugo&lt;/a&gt; を参照してください。&lt;/p&gt;
+&lt;p&gt;Hugoの一般的な設定方法や使い方については &lt;a href=&#34;https://mkmnote.net/docs/hugo/&#34;&gt;Hugo&lt;/a&gt; を参照してください。&lt;/p&gt;
 &lt;h2 id=&#34;ローカル起動とchromeでの表示&#34;&gt;ローカル起動とChromeでの表示&lt;/h2&gt;
 &lt;p&gt;ChromebookのLinuxの仕組みのため，&lt;code&gt;hugo server&lt;/code&gt;で起動しても，
 Chromeから http://localhost:1313 でうまくアクセスできません。&lt;/p&gt;
@@ -38,10 +38,10 @@ Chromeから http://localhost:1313 でうまくアクセスできません。&lt
     
     <item>
       <title>Docs: ChromebookでEmacsを使う</title>
-      <link>https://mkm0822.github.io/mkm0822.net/docs/2020/09/use-emacs-on-linux/</link>
+      <link>https://mkmnote.net/docs/2020/09/use-emacs-on-linux/</link>
       <pubDate>Tue, 01 Sep 2020 00:00:00 +0900</pubDate>
       
-      <guid>https://mkm0822.github.io/mkm0822.net/docs/2020/09/use-emacs-on-linux/</guid>
+      <guid>https://mkmnote.net/docs/2020/09/use-emacs-on-linux/</guid>
       <description>
         
         

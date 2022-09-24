@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>mkm docs – Categories</title>
-    <link>https://mkm0822.github.io/mkm0822.net/categories/</link>
+    <link>https://mkmnote.net/categories/</link>
     <description>Recent content in Categories on mkm docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     
-	  <atom:link href="https://mkm0822.github.io/mkm0822.net/categories/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://mkmnote.net/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
       
