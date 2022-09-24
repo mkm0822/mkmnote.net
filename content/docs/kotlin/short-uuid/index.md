@@ -1,21 +1,40 @@
 ---
-title: "Short UUID"
-date: 2022-09-11T01:15:10+09:00
+title: "KotlinでShort UUIDを生成"
+date: 2022-09-25T00:42:58
+tags: [ Kotlin ]
 description: >
-  短いUUID相当な文字列の作り方。
+  Kotlinでユニークかつ短い文字列の作り方。
 
-draft: true
 ---
-ユニークかつ人間が読みやすいIDが欲しい場合，
-UUIDを生成してそれをBase64でエンコードするのがお手頃でよい。
+
+## 問題
+
+Kotlinでユニークかつ短いIDを作りたい。UUIDの文字列表現は長すぎる。
+
+
+## 解決策
+
+UUIDを生成してそれをBase64でエンコードするのがお手軽。
+標準的なBase64だと `+` や `/` が使われてしまうので， `Base64.getUrlEncoder()` で取得したEncoderを使用します。
+`Base64.getUrlEncoder()` で取得したEncoderは代わりに `+` や `/` の代わりに `-` と `_` を使うのでファイル名やURLに使用できます。
 
 ```kotlin
-    fun generateShortUuid(): String {
+class ShortUuid {
+    fun generate(): String {
         val uuid = UUID.randomUUID();
-        val bb = ByteBuffer.wrap(ByteArray(16))
-        bb.putLong(uuid.mostSignificantBits)
-        bb.putLong(uuid.leastSignificantBits)
-        val bytes = Base64.getUrlEncoder().encode(bb.array())
-        return String(bytes);
+        val byteBuffer = ByteBuffer.wrap(ByteArray(16))
+            .putLong(uuid.mostSignificantBits)
+            .putLong(uuid.leastSignificantBits)
+
+        return Base64.getUrlEncoder()
+            .withoutPadding()
+            .encodeToString(byteBuffer.array())
     }
+}
 ```
+
+## 参考
+
+- [short-uuid](https://github.com/oculus42/short-uuid/blob/develop/index.js)
+- [Are Base64 encoded UUIDs unique?](https://stackoverflow.com/questions/57778312/are-base64-encoded-uuids-unique)
+

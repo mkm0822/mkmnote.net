@@ -1,12 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>mkm docs – Kotlin</title>
-    <link>https://mkm0822.github.io/mkm0822.net/docs/kotlin/</link>
+    <link>https://mkm0822.github.io/mkm0822.net/tags/kotlin/</link>
     <description>Recent content in Kotlin on mkm docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
+    <lastBuildDate>Sun, 25 Sep 2022 00:42:58 +0900</lastBuildDate>
     
-	  <atom:link href="https://mkm0822.github.io/mkm0822.net/docs/kotlin/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://mkm0822.github.io/mkm0822.net/tags/kotlin/index.xml" rel="self" type="application/rss+xml" />
     
     
       

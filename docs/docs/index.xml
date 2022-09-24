@@ -15,42 +15,6 @@
     
     
     <item>
-      <title>Docs: Next.jsの開発モードでRecoilのエラーが表示されないようにする</title>
-      <link>https://mkm0822.github.io/mkm0822.net/docs/2022/09/hide-recoil-error-on-nextjs/</link>
-      <pubDate>Sat, 24 Sep 2022 02:15:25 +0900</pubDate>
-      
-      <guid>https://mkm0822.github.io/mkm0822.net/docs/2022/09/hide-recoil-error-on-nextjs/</guid>
-      <description>
-        
-        
-        &lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
-&lt;p&gt;Next.jsでRecoilを使って &lt;code&gt;npm run dev&lt;/code&gt; すると以下の警告が表示される。&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Expectation Violation: Duplicate atom key &amp;#34;xxx&amp;#34;. This is a FATAL ERROR in
-      production. But it is safe to ignore this warning if it occurred because of
-      hot module replacement.
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;無視しても問題ないが，他の出力が見えなくなってしまって邪魔になる。&lt;/p&gt;
-&lt;h2 id=&#34;非表示にする方法&#34;&gt;非表示にする方法&lt;/h2&gt;
-&lt;h3 id=&#34;next-intercept-stdoutをインストール&#34;&gt;next-intercept-stdoutをインストール&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.npmjs.com/package/next-intercept-stdout&#34;&gt;next-intercept-stdout&lt;/a&gt; をインストールする。&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;cd path/to/your_nextjs_project
-npm i next-intercept-stdout
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;nextconfigjsを編集&#34;&gt;next.config.jsを編集&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;const withInterceptStdout = require(&amp;#39;next-intercept-stdout&amp;#39;);
-
-module.exports = withInterceptStdout(
-  {
-    reactStrictMode: true,
-    // your configs...
-  },
-  (text) =&amp;gt; (text.includes(&amp;#39;Duplicate atom key&amp;#39;) ? &amp;#39;&amp;#39; : text),
-);
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;これで &lt;code&gt;npm run dev&lt;/code&gt; してもRecoilの警告は表示されなくなる。&lt;/p&gt;
-&lt;p&gt;以上&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
       <title>Docs: Bash Tips</title>
       <link>https://mkm0822.github.io/mkm0822.net/docs/2020/09/bash-tips/</link>
       <pubDate>Thu, 03 Sep 2020 00:00:00 +0900</pubDate>
@@ -376,6 +340,78 @@ Javaで開発をしている場合は &lt;code&gt;java&lt;/code&gt; bucketを追
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git push
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;修正の確認&#34;&gt;修正の確認&lt;/h3&gt;
 &lt;p&gt;しばらくすると自動的にホスティングサーバの内容が更新されます。&lt;/p&gt;
+&lt;p&gt;以上&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: KotlinでShort UUIDを生成</title>
+      <link>https://mkm0822.github.io/mkm0822.net/docs/2022/09/short-uuid/</link>
+      <pubDate>Sun, 25 Sep 2022 00:42:58 +0900</pubDate>
+      
+      <guid>https://mkm0822.github.io/mkm0822.net/docs/2022/09/short-uuid/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;問題&#34;&gt;問題&lt;/h2&gt;
+&lt;p&gt;Kotlinでユニークかつ短いIDを作りたい。UUIDの文字列表現は長すぎる。&lt;/p&gt;
+&lt;h2 id=&#34;解決策&#34;&gt;解決策&lt;/h2&gt;
+&lt;p&gt;UUIDを生成してそれをBase64でエンコードするのがお手軽。
+標準的なBase64だと &lt;code&gt;+&lt;/code&gt; や &lt;code&gt;/&lt;/code&gt; が使われてしまうので， &lt;code&gt;Base64.getUrlEncoder()&lt;/code&gt; で取得したEncoderを使用します。
+&lt;code&gt;Base64.getUrlEncoder()&lt;/code&gt; で取得したEncoderは代わりに &lt;code&gt;+&lt;/code&gt; や &lt;code&gt;/&lt;/code&gt; の代わりに &lt;code&gt;-&lt;/code&gt; と &lt;code&gt;_&lt;/code&gt; を使うのでファイル名やURLに使用できます。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-kotlin&#34; data-lang=&#34;kotlin&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;ShortUuid&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;fun&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;generate&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;():&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;String&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;val&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;uuid&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;UUID&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;randomUUID&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;val&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;byteBuffer&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;ByteBuffer&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;wrap&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;ByteArray&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;16&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;putLong&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;uuid&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;mostSignificantBits&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;putLong&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;uuid&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;leastSignificantBits&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Base64&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;getUrlEncoder&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;withoutPadding&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;encodeToString&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;byteBuffer&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;array&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;())&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/oculus42/short-uuid/blob/develop/index.js&#34;&gt;short-uuid&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://stackoverflow.com/questions/57778312/are-base64-encoded-uuids-unique&#34;&gt;Are Base64 encoded UUIDs unique?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Next.jsの開発モードでRecoilのエラーが表示されないようにする</title>
+      <link>https://mkm0822.github.io/mkm0822.net/docs/2022/09/hide-recoil-error-on-nextjs/</link>
+      <pubDate>Sat, 24 Sep 2022 02:15:25 +0900</pubDate>
+      
+      <guid>https://mkm0822.github.io/mkm0822.net/docs/2022/09/hide-recoil-error-on-nextjs/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
+&lt;p&gt;Next.jsでRecoilを使って &lt;code&gt;npm run dev&lt;/code&gt; すると以下の警告が表示される。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Expectation Violation: Duplicate atom key &amp;#34;xxx&amp;#34;. This is a FATAL ERROR in
+      production. But it is safe to ignore this warning if it occurred because of
+      hot module replacement.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;無視しても問題ないが，他の出力が見えなくなってしまって邪魔になる。&lt;/p&gt;
+&lt;h2 id=&#34;非表示にする方法&#34;&gt;非表示にする方法&lt;/h2&gt;
+&lt;h3 id=&#34;next-intercept-stdoutをインストール&#34;&gt;next-intercept-stdoutをインストール&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.npmjs.com/package/next-intercept-stdout&#34;&gt;next-intercept-stdout&lt;/a&gt; をインストールする。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;cd path/to/your_nextjs_project
+npm i next-intercept-stdout
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;nextconfigjsを編集&#34;&gt;next.config.jsを編集&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;const withInterceptStdout = require(&amp;#39;next-intercept-stdout&amp;#39;);
+
+module.exports = withInterceptStdout(
+  {
+    reactStrictMode: true,
+    // your configs...
+  },
+  (text) =&amp;gt; (text.includes(&amp;#39;Duplicate atom key&amp;#39;) ? &amp;#39;&amp;#39; : text),
+);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;これで &lt;code&gt;npm run dev&lt;/code&gt; してもRecoilの警告は表示されなくなる。&lt;/p&gt;
 &lt;p&gt;以上&lt;/p&gt;
 
       </description>
