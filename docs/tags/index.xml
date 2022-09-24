@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>mkm docs – Tags</title>
+    <title>mkm note – Tags</title>
     <link>https://mkmnote.net/tags/</link>
-    <description>Recent content in Tags on mkm docs</description>
+    <description>Recent content in Tags on mkm note</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Sun, 25 Sep 2022 00:42:58 +0900</lastBuildDate>

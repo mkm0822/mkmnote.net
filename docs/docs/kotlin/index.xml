@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>mkm docs – Kotlin</title>
+    <title>mkm note – Kotlin</title>
     <link>https://mkmnote.net/docs/kotlin/</link>
-    <description>Recent content in Kotlin on mkm docs</description>
+    <description>Recent content in Kotlin on mkm note</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     

@@ -1,6 +1,6 @@
 baseURL = "https://mkmnote.net/"
-title = "mkm docs"
-description = "mkm docs"
+title = "mkm note"
+description = "mkm note"
 
 enableRobotsTXT = true
 

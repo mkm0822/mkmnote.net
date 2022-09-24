@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>mkm docs – Blog</title>
+    <title>mkm note – Blog</title>
     <link>https://mkmnote.net/blog/</link>
-    <description>Recent content in Blog on mkm docs</description>
+    <description>Recent content in Blog on mkm note</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     
