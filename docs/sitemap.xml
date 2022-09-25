@@ -2,31 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://mkmnote.net/docs/2020/09/bash-tips/</loc>
+    <loc>https://mkmnote.net/docs/scoop/use-scoop/</loc>
     <lastmod>2022-09-03T22:40:49+09:00</lastmod>
   </url><url>
-    <loc>https://mkmnote.net/docs/2020/08/use-scoop/</loc>
-    <lastmod>2022-09-03T22:40:49+09:00</lastmod>
-  </url><url>
-    <loc>https://mkmnote.net/docs/2020/08/hugo-with-github/</loc>
+    <loc>https://mkmnote.net/docs/hugo/hugo-with-github/</loc>
     <lastmod>2022-09-24T02:42:55+09:00</lastmod>
   </url><url>
     <loc>https://mkmnote.net/docs/</loc>
     <lastmod>2022-09-03T22:40:49+09:00</lastmod>
   </url><url>
+    <loc>https://mkmnote.net/tags/bash/</loc>
+    <lastmod>2022-09-25T10:17:14+09:00</lastmod>
+  </url><url>
+    <loc>https://mkmnote.net/tags/</loc>
+    <lastmod>2022-09-25T10:17:14+09:00</lastmod>
+  </url><url>
+    <loc>https://mkmnote.net/docs/bash/share-history-with-multiple-processes/</loc>
+    <lastmod>2022-09-25T10:17:14+09:00</lastmod>
+  </url><url>
     <loc>https://mkmnote.net/tags/kotlin/</loc>
     <lastmod>2022-09-25T01:12:12+09:00</lastmod>
   </url><url>
-    <loc>https://mkmnote.net/docs/2022/09/kotlin-short-uuid/</loc>
-    <lastmod>2022-09-25T01:12:12+09:00</lastmod>
-  </url><url>
-    <loc>https://mkmnote.net/tags/</loc>
+    <loc>https://mkmnote.net/docs/kotlin/kotlin-short-uuid/</loc>
     <lastmod>2022-09-25T01:12:12+09:00</lastmod>
   </url><url>
     <loc>https://mkmnote.net/tags/next.js/</loc>
     <lastmod>2022-09-25T00:55:29+09:00</lastmod>
   </url><url>
-    <loc>https://mkmnote.net/docs/2022/09/hide-recoil-error-on-nextjs/</loc>
+    <loc>https://mkmnote.net/docs/nextjs/hide-recoil-error-on-nextjs/</loc>
     <lastmod>2022-09-25T00:55:29+09:00</lastmod>
   </url><url>
     <loc>https://mkmnote.net/tags/recoil/</loc>
@@ -35,23 +38,28 @@
     <loc>https://mkmnote.net/blog/2022/09/04/%E5%88%9D%E6%8A%95%E7%A8%BF/</loc>
     <lastmod>2022-09-06T02:07:38+09:00</lastmod>
   </url><url>
-    <loc>https://mkmnote.net/tags/bash/</loc>
+    <loc>https://mkmnote.net/docs/bash/batch-text-replace-in-directories/</loc>
+    <lastmod>2020-09-03T00:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://mkmnote.net/docs/bash/hide-stdout-and-stderr/</loc>
+    <lastmod>2020-09-03T00:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://mkmnote.net/docs/chromebook/use-hugo-on-linux/</loc>
     <lastmod>2022-09-03T22:40:49+09:00</lastmod>
   </url><url>
-    <loc>https://mkmnote.net/docs/2020/09/use-hugo-on-linux/</loc>
+    <loc>https://mkmnote.net/docs/chromebook/use-emacs-on-linux/</loc>
     <lastmod>2022-09-03T22:40:49+09:00</lastmod>
   </url><url>
-    <loc>https://mkmnote.net/docs/2020/09/use-emacs-on-linux/</loc>
+    <loc>https://mkmnote.net/docs/scoop/recommended-apps-by-scoop/</loc>
     <lastmod>2022-09-03T22:40:49+09:00</lastmod>
   </url><url>
-    <loc>https://mkmnote.net/docs/2020/08/recommended-apps-by-scoop/</loc>
-    <lastmod>2022-09-03T22:40:49+09:00</lastmod>
-  </url><url>
-    <loc>https://mkmnote.net/docs/2020/08/change-docsy-lastmod-format/</loc>
+    <loc>https://mkmnote.net/docs/hugo/change-docsy-lastmod-format/</loc>
     <lastmod>2022-09-03T22:40:49+09:00</lastmod>
   </url><url>
     <loc>https://mkmnote.net/docs/bash/</loc>
     <lastmod>2022-09-03T22:40:49+09:00</lastmod>
+  </url><url>
+    <loc>https://mkmnote.net/docs/bash/bash-shell-script-tips/</loc>
   </url><url>
     <loc>https://mkmnote.net/blog/</loc>
     <lastmod>2022-09-06T02:07:38+09:00</lastmod>
@@ -78,5 +86,7 @@
   </url><url>
     <loc>https://mkmnote.net/search/</loc>
     <lastmod>2022-09-03T22:40:49+09:00</lastmod>
+  </url><url>
+    <loc>https://mkmnote.net/tags/shell-script/</loc>
   </url>
 </urlset>

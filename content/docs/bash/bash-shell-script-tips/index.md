@@ -1,51 +1,10 @@
 ---
-title: "Bash Tips"
-date: 2020-09-03T00:00:00+09:00
-weight: 1
-tags: [ "bash" ]
+title: "Bash Shell Script Tips"
+tags: [ Bash, Shell Script ]
 description: >
-  BashのTipsです。
+  Bash Shell ScriptのTips。
 
 ---
-
-## 複数bashプロセス間でhistoryを共有
-
-複数のbashプロセス間でhistoryを共有するには `.bashrc` に以下の設定を記述します。
-
-```
-PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
-shopt -u histappend
-```
-
-一行目で，コマンド履歴をファイルに追記，メモリ上のコマンド履歴を消去，コマンド履歴をファイルから読み込み，という処理をコマンドを実行するたびに実行するように設定しています。
-
-二行目ではbashを修了したときにコマンド履歴をhistoryファイルに書き込まないように指定しています。
-
-## サブディレクトリのファイル内の文字列を一括置換
-
-サブディレクトリのファイル内の文字列をを一括置換するコマンドの例です。
-
-名前が `kustomization` で始まるファイルのうち，
-パスに `base/` を含むファイル内の `deployment` という文字列を `resources` に置換するには以下のコマンドを実行します。
-
-```
-find . -name "kustomization*" | grep base/ | xargs sed -i -e 's/deployment/resources/g'
-```
-
-拡張子が `.yml` なファイルのうち，ファイル内に `yaml` という文字列を含むファイルの，
-`yaml` という文字列を `yml` に置換するには以下のコマンドを実行します。。
-
-```
-find . -type f -name "*.yml" -print | xargs grep -l yaml | xargs sed -i "s/yaml/yml/g"
-```
-
-## 標準出力と標準エラーの両方を捨てる
-
-コマンドの実行したときの標準出力と標準エラーを両方捨てるには以下のようにリダイレクトします。
-
-```
-cmd > /dev/null 2>&1
-```
 
 ## 文字列を含むか判定
 

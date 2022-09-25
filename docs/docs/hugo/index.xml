@@ -16,10 +16,10 @@
     
     <item>
       <title>Docs: HugoとGitHubでサイト運営</title>
-      <link>https://mkmnote.net/docs/2020/08/hugo-with-github/</link>
+      <link>https://mkmnote.net/docs/hugo/hugo-with-github/</link>
       <pubDate>Sat, 22 Aug 2020 00:00:00 +0900</pubDate>
       
-      <guid>https://mkmnote.net/docs/2020/08/hugo-with-github/</guid>
+      <guid>https://mkmnote.net/docs/hugo/hugo-with-github/</guid>
       <description>
         
         
@@ -194,10 +194,10 @@
     
     <item>
       <title>Docs: Docsyで最終更新の表示を変更</title>
-      <link>https://mkmnote.net/docs/2020/08/change-docsy-lastmod-format/</link>
+      <link>https://mkmnote.net/docs/hugo/change-docsy-lastmod-format/</link>
       <pubDate>Sat, 22 Aug 2020 00:00:00 +0900</pubDate>
       
-      <guid>https://mkmnote.net/docs/2020/08/change-docsy-lastmod-format/</guid>
+      <guid>https://mkmnote.net/docs/hugo/change-docsy-lastmod-format/</guid>
       <description>
         
         
