@@ -38,27 +38,6 @@ shopt -u histappend
     </item>
     
     <item>
-      <title>Docs: ディレクトリのファイル内の文字列を一括置換</title>
-      <link>https://mkmnote.net/docs/bash/batch-text-replace-in-directories/</link>
-      <pubDate>Thu, 03 Sep 2020 00:00:00 +0900</pubDate>
-      
-      <guid>https://mkmnote.net/docs/bash/batch-text-replace-in-directories/</guid>
-      <description>
-        
-        
-        &lt;p&gt;ディレクトリのファイル内の文字列を一括置換するコマンドの例です。
-サブディレクトリも置換対象に含みます。&lt;/p&gt;
-&lt;p&gt;名前が &lt;code&gt;kustomization&lt;/code&gt; で始まるファイルのうち，
-パスに &lt;code&gt;base/&lt;/code&gt; を含むファイル内の &lt;code&gt;deployment&lt;/code&gt; という文字列を &lt;code&gt;resources&lt;/code&gt; に置換するには以下のコマンドを実行します。&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;find . -name &amp;#34;kustomization*&amp;#34; | grep base/ | xargs sed -i -e &amp;#39;s/deployment/resources/g&amp;#39;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;拡張子が &lt;code&gt;.yml&lt;/code&gt; なファイルのうち，ファイル内に &lt;code&gt;yaml&lt;/code&gt; という文字列を含むファイルの，
-&lt;code&gt;yaml&lt;/code&gt; という文字列を &lt;code&gt;yml&lt;/code&gt; に置換するには以下のコマンドを実行します。。&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;find . -type f -name &amp;#34;*.yml&amp;#34; -print | xargs grep -l yaml | xargs sed -i &amp;#34;s/yaml/yml/g&amp;#34;
-&lt;/code&gt;&lt;/pre&gt;
-      </description>
-    </item>
-    
-    <item>
       <title>Docs: 標準出力と標準エラーを捨てる</title>
       <link>https://mkmnote.net/docs/bash/hide-stdout-and-stderr/</link>
       <pubDate>Thu, 03 Sep 2020 00:00:00 +0900</pubDate>
@@ -70,6 +49,31 @@ shopt -u histappend
         &lt;p&gt;コマンドの実行したときの標準出力と標準エラーを両方捨てるには以下のようにリダイレクトします。&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;your_cmd &amp;gt; /dev/null 2&amp;gt;&amp;amp;1
 &lt;/code&gt;&lt;/pre&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: 複数のファイル内の文字列を一括置換</title>
+      <link>https://mkmnote.net/docs/bash/batch-text-replace-in-directories/</link>
+      <pubDate>Thu, 03 Sep 2020 00:00:00 +0900</pubDate>
+      
+      <guid>https://mkmnote.net/docs/bash/batch-text-replace-in-directories/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;例1&#34;&gt;例1&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;find . -type f -name &amp;#34;kustomization*&amp;#34; | grep base/ | xargs sed -i -e &amp;#39;s/deployment/resources/g&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;対象: カレントディレクトリ以下 (サブディレクトリ下含む) にあるファイル &amp;amp; ファイル名が &lt;code&gt;kustomization&lt;/code&gt; で始まる &amp;amp; パスに &lt;code&gt;base/&lt;/code&gt; を含む&lt;/li&gt;
+&lt;li&gt;置換: ファイル内の &lt;code&gt;deployment&lt;/code&gt; という文字列を &lt;code&gt;resources&lt;/code&gt; に置換&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;例2&#34;&gt;例2&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;find . -type f -name &amp;#34;*.config&amp;#34; -print | xargs grep -l foo | xargs sed -i &amp;#34;s/yaml/yml/g&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;対象: カレントディレクトリ以下 (サブディレクトリ下含む)にあるファイル &amp;amp; 拡張子が &lt;code&gt;.config&lt;/code&gt; &amp;amp; ファイル内に &lt;code&gt;foo&lt;/code&gt; という文字列を含むファイル&lt;/li&gt;
+&lt;li&gt;置換: &lt;code&gt;yaml&lt;/code&gt; という文字列を &lt;code&gt;yml&lt;/code&gt; に置換&lt;/li&gt;
+&lt;/ul&gt;
+
       </description>
     </item>
     
