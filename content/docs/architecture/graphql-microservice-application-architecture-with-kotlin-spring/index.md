@@ -1,5 +1,5 @@
 ---
-title: KotlinとSpringを使ったマイクロサービス内のアーキテクチャ設計
+title: KotlinとSpringを使ったマイクロサービスのアプリケーションアーキテクチャ
 date: 2022-09-25T17:59:03
 tags:
   - Kotlin
@@ -14,7 +14,7 @@ tags:
   - Mockk
   - Spring Mockk
 description: >
-  KotlinとSpringを使ったマイクロサービス内のアーキテクチャ設計について。
+  KotlinとSpringを使ったマイクロサービスのアプリケーションアーキテクチャについて。
 
 draft: true
 ---
@@ -23,7 +23,7 @@ draft: true
 
 GraphQLのAPIを持ち，データベースを使用するマイクロサービスを開発します。
 
-## 技術スタック
+## 使用する技術
 
 以下の技術を使用します。
 
@@ -39,3 +39,10 @@ GraphQLのAPIを持ち，データベースを使用するマイクロサービ�
 | Flyway | DB Migrationツール。 |
 | Kotest | 自動テストフレームワーク。 |
 | Mockk/Spring Mockk | モックライブラリ。 |
+
+
+## アーキテクチャ
+
+![アーキテクチャ](architecture.png)
+
+
