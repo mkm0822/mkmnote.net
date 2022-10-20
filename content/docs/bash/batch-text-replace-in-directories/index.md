@@ -19,7 +19,7 @@ find . -type f -name "kustomization*" | grep base/ | xargs sed -i -e 's/deployme
 ## 例2
 
 ```
-find . -type f -name "*.config" -print | xargs grep -l foo | xargs sed -i "s/yaml/yml/g"
+find . -type f -name "*.config" -print0 | xargs grep -l foo | xargs sed -i "s/yaml/yml/g"
 ```
 
 - 対象: カレントディレクトリ以下 (サブディレクトリ下含む)にあるファイル & 拡張子が `.config` & ファイル内に `foo` という文字列を含むファイル

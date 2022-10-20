@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.104.0" />
+<meta name="generator" content="Hugo 0.104.3" />
 <meta name="robots" content="index, follow">
 
 
@@ -177,6 +177,8 @@ if (!doNotTrack) {
   <a href="/docs/scoop/recommended-apps-by-scoop/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docsscooprecommended-apps-by-scoop"><span class="">Scoopでインストールできるおすすめアプリ</span></a>
 </li>
   </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsarchitecture-li">
+  <a href="/docs/architecture/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-docsarchitecture"><span class="">アーキテクチャ設計</span></a>
 </li>
   </ul>
 </li>
@@ -302,7 +304,7 @@ if (!doNotTrack) {
 <li>置換: ファイル内の <code>deployment</code> という文字列を <code>resources</code> に置換</li>
 </ul>
 <h2 id="例2">例2</h2>
-<pre tabindex="0"><code>find . -type f -name &#34;*.config&#34; -print | xargs grep -l foo | xargs sed -i &#34;s/yaml/yml/g&#34;
+<pre tabindex="0"><code>find . -type f -name &#34;*.config&#34; -print0 | xargs grep -l foo | xargs sed -i &#34;s/yaml/yml/g&#34;
 </code></pre><ul>
 <li>対象: カレントディレクトリ以下 (サブディレクトリ下含む)にあるファイル &amp; 拡張子が <code>.config</code> &amp; ファイル内に <code>foo</code> という文字列を含むファイル</li>
 <li>置換: <code>yaml</code> という文字列を <code>yml</code> に置換</li>

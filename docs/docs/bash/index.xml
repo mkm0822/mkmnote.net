@@ -68,7 +68,7 @@ shopt -u histappend
 &lt;li&gt;置換: ファイル内の &lt;code&gt;deployment&lt;/code&gt; という文字列を &lt;code&gt;resources&lt;/code&gt; に置換&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;例2&#34;&gt;例2&lt;/h2&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;find . -type f -name &amp;#34;*.config&amp;#34; -print | xargs grep -l foo | xargs sed -i &amp;#34;s/yaml/yml/g&amp;#34;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;find . -type f -name &amp;#34;*.config&amp;#34; -print0 | xargs grep -l foo | xargs sed -i &amp;#34;s/yaml/yml/g&amp;#34;
 &lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
 &lt;li&gt;対象: カレントディレクトリ以下 (サブディレクトリ下含む)にあるファイル &amp;amp; 拡張子が &lt;code&gt;.config&lt;/code&gt; &amp;amp; ファイル内に &lt;code&gt;foo&lt;/code&gt; という文字列を含むファイル&lt;/li&gt;
 &lt;li&gt;置換: &lt;code&gt;yaml&lt;/code&gt; という文字列を &lt;code&gt;yml&lt;/code&gt; に置換&lt;/li&gt;
