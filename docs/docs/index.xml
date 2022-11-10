@@ -690,5 +690,56 @@ scoop install adopt14-hotspot
       </description>
     </item>
     
+    <item>
+      <title>Docs: Git commit commentのガイドライン</title>
+      <link>https://mkmnote.net/docs/git/git-commit-comment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mkmnote.net/docs/git/git-commit-comment/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;書式&#34;&gt;書式&lt;/h2&gt;
+&lt;p&gt;以下の書式でcommit commentを書く。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&amp;lt;type&amp;gt;[optional scope]: &amp;lt;description&amp;gt;
+
+[optional body]
+
+[optional footer]
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;type&#34;&gt;type&lt;/h2&gt;
+&lt;p&gt;typeには以下を指定する。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;feat: 新しい機能&lt;/li&gt;
+&lt;li&gt;fix: バグの修正&lt;/li&gt;
+&lt;li&gt;imp: 機能を改善する&lt;/li&gt;
+&lt;li&gt;remove: 機能を削除&lt;/li&gt;
+&lt;li&gt;refactor: バグ修正や新しい機能の追加以外のコードの変更。コードを整理する&lt;/li&gt;
+&lt;li&gt;perf: 性能を改善するコードの変更&lt;/li&gt;
+&lt;li&gt;build: ビルドシステムや外部ライブラリなどの依存に変更&lt;/li&gt;
+&lt;li&gt;ci: CIのための設定やスクリプトの変更&lt;/li&gt;
+&lt;li&gt;docs: ドキュメントだけの変更&lt;/li&gt;
+&lt;li&gt;style: コードの内容に影響のない変更 (フォーマットなどの変更)&lt;/li&gt;
+&lt;li&gt;test: 不足しているテストの追加やテストの修正&lt;/li&gt;
+&lt;li&gt;chore: 雑多な修正&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;例&#34;&gt;例&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.conventionalcommits.org/ja/v1.0.0-beta.4/#%E4%BE%8B&#34;&gt;https://www.conventionalcommits.org/ja/v1.0.0-beta.4/#%E4%BE%8B&lt;/a&gt; から引用。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;feat: allow provided config object to extend other configs
+BREAKING CHANGE: `extends` key in config file is now used for extending other config files
+chore!: drop Node 6 from testing matrix
+BREAKING CHANGE: dropping Node 6 which hits end of life in April
+docs: correct spelling of CHANGELOG
+feat(lang): add polish language
+fix: correct minor typos in code
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.conventionalcommits.org/ja/v1.0.0-beta.4/&#34;&gt;Conventional Commits&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines&#34;&gt;Angular - Commit Message Guidelines&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://anond.hatelabo.jp/20160725092419&#34;&gt;gitにおけるコミットログ/メッセージ例文集100 &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
   </channel>
 </rss>
