@@ -15,6 +15,45 @@
     
     
     <item>
+      <title>Docs: Hugo Cheet Sheet</title>
+      <link>https://mkmnote.net/docs/hugo/hugo-cheet-sheet/</link>
+      <pubDate>Sat, 12 Nov 2022 02:02:03 +0900</pubDate>
+      
+      <guid>https://mkmnote.net/docs/hugo/hugo-cheet-sheet/</guid>
+      <description>
+        
+        
+        &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# 新しい記事を作成
+hugo new content/docs/hugo/hugo-cheet-sheet/index.md
+
+# サーバーモードで起動 (ドラフトも含める)
+hugo server -D
+
+# ビルド
+hugo
+&lt;/code&gt;&lt;/pre&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: k8s Cheet Sheet</title>
+      <link>https://mkmnote.net/docs/k8s/k8s-cheet-sheet/</link>
+      <pubDate>Sat, 12 Nov 2022 01:57:30 +0900</pubDate>
+      
+      <guid>https://mkmnote.net/docs/k8s/k8s-cheet-sheet/</guid>
+      <description>
+        
+        
+        &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# すべてのPodを停止
+kubectl scale --replicas=0 deployment/&amp;lt;your-deployment&amp;gt;
+
+# Podを一つだけにする
+kubectl scale --replicas=1 deployment/&amp;lt;your-deployment&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Scoopの使い方</title>
       <link>https://mkmnote.net/docs/scoop/use-scoop/</link>
       <pubDate>Sun, 23 Aug 2020 00:00:00 +0900</pubDate>
