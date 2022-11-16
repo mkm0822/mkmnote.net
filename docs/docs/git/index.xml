@@ -36,6 +36,7 @@
 &lt;li&gt;feat: 新しい機能&lt;/li&gt;
 &lt;li&gt;fix: バグの修正&lt;/li&gt;
 &lt;li&gt;imp: 機能を改善する&lt;/li&gt;
+&lt;li&gt;change: 機能を変更する&lt;/li&gt;
 &lt;li&gt;remove: 機能を削除&lt;/li&gt;
 &lt;li&gt;refactor: バグ修正や新しい機能の追加以外のコードの変更。コードを整理する&lt;/li&gt;
 &lt;li&gt;perf: 性能を改善するコードの変更&lt;/li&gt;
